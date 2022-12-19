@@ -37,7 +37,7 @@ async def on_startup(logger, settings, **_):
 
     # Disable scanning for CustomResourceDefinitions updates
     settings.scanning.disabled = True
-    
+
 
 @kopf.timer(operator_domain, operator_version, 'catalogitems', interval=5)
 async def catalog_item_timer(annotations, labels, name, namespace, spec, logger, **_):
